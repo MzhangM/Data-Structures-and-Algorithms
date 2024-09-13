@@ -1,0 +1,9 @@
+int left = 0, right = 0;
+while(right < n){
+  windows.add(nums[right]);
+  right ++;
+}
+    while(valid){
+      windows.remove(nums[left]);
+      left++;
+    }
