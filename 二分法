@@ -1,0 +1,28 @@
+//一般有两种写法
+//1.左闭右闭[left, right]   2.左闭右开[left, right)
+
+//1.左闭右闭  
+int left = 0, right = nums.length - 1;
+while(left <= right){  //可以举例: 假如left = 1, right = 1, 此时的[left, right]是一个有效区间
+    int mid = left + (right - left) / 2;
+    if(target < nums[mid]){
+      right = mid - 1; //这里根据if里面的条件已经得到了mid此处的值是大于target的，因为定义的区间是左闭右闭，因此新一轮的判断又区间不应该包含mid;
+    }else if(target > nums[mid]){
+      left = mid + 1;  //同理
+    }else return mid;
+}
+ return -1;
+
+
+
+ //2.左闭右开 : 此处注意由于右区间是开区间，所以right应该是num.length
+ int left = 0, right = nums.length;
+ while(left < right){//可以举例:  假如left = 1, right = 1, 此时的[left, right]为[1，1), 是一个矛盾的无效区间
+    int mid = left + (right - left) / 2;
+    if(target < nums[mid]){
+        right = mid;
+    }else if(target > nums[mid]){
+        left = mid + 1;
+    }else return mid;
+ }
+ return -1;
