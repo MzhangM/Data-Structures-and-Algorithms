@@ -1,9 +1,11 @@
-int left = 0, right = 0;
-while(right < n){
-  windows.add(nums[right]);
-  right ++;
-}
-    while(valid){
-      windows.remove(nums[left]);
-      left++;
+int left = 0;
+
+for(int right = 0; right < len; right ++){
+    //进行添加元素相关操作
+
+    while(){ //循环判断条件：不满足某某要求
+        //进行相关操作
+          left++;
     }
+//更新结果
+}
