@@ -1,0 +1,51 @@
+// 回溯
+// 1.回溯：子集型
+    // 每个元素都可以选/不选
+// 1.1 从输入的角度考虑问题（选或不选）
+void dfs(int i){
+  if(i == n){
+    ans.add(new LinkedList<>(path));
+    return;
+  }
+  //不选
+  dfs(i + 1);
+  
+  //选
+  path.add(nums[i]);
+  dfs(i + 1);
+  path.removeLast();
+}
+
+//1.2 从答案的视角考虑问题（枚举选哪个）：枚举子集（答案）的第一个数选谁，第二个数选谁...  dfs(i)中的i表示现在要枚举选nums[i]到nums[n - 1]
+void dfs(int i){
+  if(){
+    res.add();
+    return;
+  }
+
+  for(int j = i; j < n; j++){
+    //操作逻辑
+    dfs(j + 1);
+    //回溯
+  }
+}
+
+
+// 回溯：组合型
+
+
+
+// 回溯：排列型
+boolean[] used;
+void dfs(){
+  if(i == nums.length){ //i是递归深度，也就是当前已经选了多少个数
+    res.add(new ArrayList<>(path));
+    return;
+  }
+
+  for(int j = 0; j < nums.length; j++){ //组合数，这里从0开始而不是i
+      if(!used[j]){
+        ...
+      }
+  }
+}
